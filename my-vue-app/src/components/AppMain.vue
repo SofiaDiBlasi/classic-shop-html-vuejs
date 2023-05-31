@@ -64,7 +64,7 @@
   </main>
 </template>
 
-<style>
+<style lang="scss">
     main{
         width: 100%;
         height: 390.625rem;
