@@ -66,7 +66,6 @@
 
 <style>
     main{
-        background-color: blue;
         width: 100%;
         height: 390.625rem;
     }
