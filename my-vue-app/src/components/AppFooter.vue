@@ -39,3 +39,11 @@
 
   </footer>
 </template>
+
+<style>
+    footer{
+        background-color: green;
+        width: 100%;
+        height: 71.875rem;
+    }
+</style>
