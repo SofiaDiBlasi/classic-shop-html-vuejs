@@ -127,19 +127,23 @@
 </script>
 
 <template>
-  <div class="container">
-    <div class="row d-flex">
-      <div class="col">
+  <div  class="container-fluid px-0 featuredBox mb-5">
+    <div class="row h-30 justify-content-center align-items-center">
+      <div class="col-3"><hr class="mb-5" /></div>
+      <div class="col-auto text-center">
         <h1>Featured Products</h1>
-        <span>Must have products from our top sellers</span>
+        <p>Must have products from our top sellers</p>
       </div>
+      <div class="col-3"><hr class="mb-5"/></div>
     </div>
-    <div class="row">
-      <button class="categoriaButton" @click="changeCategoria($event)" v-for="categoria in featuredProduct" :key="categoria" :value="featuredProduct.indexOf(categoria)">{{categoria.type}}</button>
+    <div class="row h-20 justify-content-center align-items-center">
+      <div class="btn-group w-30 mb-5" role="group">
+        <button class="categoriaButton btn" @click="changeCategoria($event)" v-for="categoria in featuredProduct" :key="categoria" :value="featuredProduct.indexOf(categoria)">{{categoria.type}}</button>
+      </div>
     </div> 
-    <div class="row">
-      <div class="col" v-for="card in currentButton.capo" :key="card">
-        <img :src="card.img" alt="">
+    <div class="row h-50 justify-content-center align-items-center product-container">
+      <div class="col d-flex flex-column align-items-center justify-content-center" v-for="card in currentButton.capo" :key="card">
+        <img class="productImg" :src="card.img" alt="">
         <p>{{ card.testo1 }}</p>
         <small>{{ card.testo2 }}</small>
         <p class="d-flex text-primary"><span class="text-decoration-line-through" :class="card.prezzoSbarrato != null ? 'd-block':'d-none'">{{ card.prezzoSbarrato }}</span>{{ card.prezzo }}</p>
@@ -150,13 +154,32 @@
 
 
 <style lang="scss">
+  .featuredBox {
+    height: 700px;
+  }
   .categoriaButton {
-    width: 100px;
-    background-color: light-grey;
-    border: 1px solid grey;
+    color: black !important;
+    background-color: lightgray !important;
+    border: 1px solid lightgray !important;
+    width: 100px !important;
+    height: 50px !important;
 
     &:hover{
       background-color: white;
     }
+    &:focus {
+      background-color: white !important;
+  }
+}
+  .productImg{
+    width: 200px;
+    height: 260px;
+  }
+
+  .w-30{
+    width: 30%!important;
+  }
+  .product-container {
+    padding: 0 250px;
   }
 </style>
