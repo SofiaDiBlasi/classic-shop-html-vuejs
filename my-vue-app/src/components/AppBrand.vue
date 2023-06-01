@@ -16,13 +16,13 @@
 </script>
 
 <template>
-   <div class="container-fluid brandBox">
-      <div class="row">
-         <h1>BRAND LOGOS</h1>
+   <div class="container-fluid brandBox py-5">
+      <div class="row text-center">
+         <p class="">BRAND LOGOS</p>
       </div>
       <div class="row">
-         <div class="col">
-            <img v-for="img in img" :key="img" :src="img" alt="">
+         <div class="col d-flex justify-content-center align-items-center">
+            <img class="m-5" v-for="img in img" :key="img" :src="img" alt="">
          </div>
       </div>
    </div>
@@ -30,6 +30,7 @@
 
 <style lang="scss">
    .brandBox{
+      height: 18.75rem ;
       background-color: #f6f6f6;
    }
 </style>

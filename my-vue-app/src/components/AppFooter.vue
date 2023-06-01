@@ -30,19 +30,20 @@
     <AppSubscribeVue />
 
     <!--sezione 3-->
-    <!--Copyright etc-->
-    <AppTermsVue />
-
-    <!--sezione 4-->
     <!--Info azienda etc-->
     <AppContattiVue />
+    
+
+    <!--sezione 4-->
+    <!--Copyright etc-->
+    <AppTermsVue />
+   
 
   </footer>
 </template>
 
 <style>
     footer{
-        background-color: green;
         width: 100%;
         height: 71.875rem;
     }
