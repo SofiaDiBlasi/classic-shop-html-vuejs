@@ -12,11 +12,13 @@
     "axios": "^1.4.0",
     "bootstrap": "^5.3.0",
     "font-awesome": "^4.7.0",
-    "vue": "^3.2.47"
+    "vue": "^3.2.47",
+    "vue3-carousel": "^0.3.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",
     "sass": "^1.62.1",
-    "vite": "^4.3.9"
+    "vite": "^4.3.9",
+    "vue-carousel": "^0.18.0"
   }
 }
