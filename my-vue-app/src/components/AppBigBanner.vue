@@ -43,18 +43,18 @@
 <template>
 
   <!--contenitore generale-->
-  <div :style="'background-image: url(' + currentBanner + ')'" class="container-fluid">
-    <div class="row">
-      <div class="col bigBanner d-flex flex-column justify-content-center align-items-center my-0 py-0">
+  <div :style="'background-image: url(' + currentBanner + '); background-size: cover'" class="container-fluid bigBanner px-0">
+    <div class="row align-items-center justify-content-center h-100">
+      <div class="col-auto d-flex flex-column justify-content-center align-items-center h-100">
 
         <!--testo del banner-->
         <h1 class="text-light">Brand New Arrivals</h1>
-        <h5 class="text-light">NEW COLLECTION FROM NEW YORK</h5>
+        <p class="text-light">NEW COLLECTION FROM NEW YORK</p>
 
         <!--pulsanti-->
         <div class="d-flex">
-          <button class="bannerBtn text-light rounded-pill">VIEW ALL</button>
-          <button class="bannerBtn text-light rounded-pill">LOOKBOOK</button>
+          <button class="btn btn-lg bannerBtn text-light rounded-pill mx-2 px-4">VIEW ALL</button>
+          <button class="btn btn-lg bannerBtn text-light rounded-pill mx-2 px-4">LOOKBOOK</button>
         </div>
       </div>
     </div>
@@ -63,11 +63,11 @@
 
 <style lang="scss">
   .bigBanner{
-    width: 100%;
     height: 600px;
   }
   .bannerBtn {
-    background-color:rgba(255, 255, 255, 0.3);
-    border: 1px solid white;
+    background-color:rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid white !important;
+    color: white !important;
   }
 </style>

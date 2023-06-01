@@ -10,23 +10,31 @@
               "fa-brands fa-instagram",
               "fa-brands fa-youtube"
         ],
-        accountInfo : [
-              "Profilo",
-              "Impostazioni",
-              "Disconnetti",
-              "Contatta Assistenza"
-        ],
         cartItem : [
             "n-1 T-shirt Tg Sx",
             "n-2 Cappello in lana"
         ],
         navMenù : [
-            "Home",
-            "Shop",
-            "Products",
-            "Categories",
-            "News",
-            "Elements"
+          {
+            name:"Home",
+            order:0
+          },
+          {
+            name:"Shop",
+            order:1
+          },
+          {
+            name:"Products",
+            order:2
+          },
+          {
+            name:"Categories",
+            order:3
+          },
+          {
+            name:"Elements",
+            order:5
+          }
         ],
         navItem : [
             "opzione 1",
@@ -44,100 +52,109 @@
 <template>
 
   <!--contenitore generale-->
-  <div class="d-flex flex-column w-100">
+  <div class="container-fluid header-container px-0">
 
     <!--sezione 1-->
 
     <!--parte alta header-->
-    <div class="cart container row">
+    <div class="row align-items-center h-30">
 
       <!--parte sinistra-->
 
       <!--icone social-->
-      <div class="col-6">
-        <i v-for="icone in iconeSocial" :key="icone" :class="icone" class="iconeSocial m-2"></i>
+      <div class="col-6 text-center">
+        <i v-for="icone in iconeSocial" :key="icone" :class="icone" class="iconeSocial mx-3"></i>
       </div>
 
       <!--parte destra-->
 
-      <div class="col-6">
-        <div class="row m-0 p-0">
+      <div class="col-6 h-100">
+        <div class="row h-100">
 
           <!--shopping cart-->
-          <div class="offset-2 col-2 m-2 p-0">
-            Shopping Cart
+          <div class="d-flex flex-row-reverse col-3 border-end h-100 align-items-center">
+            <div>Shopping Cart</div>
           </div>
 
           <!--menù profilo-->
-          <select id="cartItem" class="col-2 dropdown m-2 p-0 border-0" aria-label="Default select example">
-            <option>
-               My Account
-            </option>
-            <option v-for="info in accountInfo" :key="info" :value="info">{{ info }}</option>
-          </select>
+          <div class="d-flex col-2 border-end h-100 align-items-center">
+            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+              My Account
+            </button>
+          </div>
 
           <!--menù carrello-->
-            <select id="cartItem" class="col-2 dropdown m-2 border-0" aria-label="Default select example">
-              <option>
-                <span class="cartIcon">&#xf07a;</span>
-                Cart</option>
-              <option v-for="item in cartItem" :key="item" :value="item">{{ item }}</option>
-            </select>
+          <div class="d-flex col-3 bg-light h-100 align-items-center">
+            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-cart-shopping"></i>
+              CART
+            </button>
+          </div>
         </div>
       </div>
     </div>
 
-    <hr class="my-0">
+    <hr class="m-0">
 
     <!--sezione 2-->
 
     <!--parte bassa header-->
 
     <!--logo Avada-->
-    <div class="row m-0">
-      <div class="col-2">
+    <div class="row h-70">
+      <div class="offset-2 col-2 logo text-center h-100 align-items-center justify-content-center d-flex">
         <img src="../assets/images/classic_shop_logo1x.png" alt="">
       </div>
 
       <!--select menù navbar-->
-      <select v-for="navSection in navMenù" :key="navSection" class="col-1 dropdown m-2 navBar py-0 my-0" aria-label="Default select example">
-        <option>{{ navSection }}</option>
-        <option v-for="navItem in navItem" :key="navItem" :value="navItem">{{ navItem }}</option>
-      </select>
-
-          <!--shop button-->
-      <div class="col-3">
-        <a class="btn btn-primary rounded-pill" href="#" role="button">SHOP NOW!</a>
+      <div class="offset-1 col-7 select text-center h-100 align-items-center d-flex">
+        <button v-for="voce in navMenù" :key="voce" :class="'order-'+ voce.order" class="navBar rounded-0 btn dropdown-toggle h-100" type="button" data-toggle="dropdown" aria-expanded="false">
+          {{ voce.name }}
+        </button>
+        <button class="navBar h-100 rounded-0 btn order-4" href="">News</button>
+        <button type="button" class="btn btn-primary btn-lg rounded-pill font-weight-bold mx-5 order-6">
+          SHOP NOW!
+        </button>
+        <i class="fa-solid fa-magnifying-glass fs-6 ms-1 order-7"></i>
       </div>
-
-      <!--search bar o solo icona? chiedere-->
-      <div></div>
-
     </div>
   </div>
 </template>
 
 <style lang="scss">
-  .cart {
-    height: 3.5rem;
+  .header-container {
+    font-size: 13px !important;
+    height: 140px;
+  }
+  .h-30 {
+    height: 30%;
+  }
+  .h-70 {
+    height: 70%;
+  }
+  .btn {
+    font-size: 13px !important;
   }
 
   .iconeSocial{
     color: #494949;
   }
-
   .navBar{
     color: #494949;
     border: none;
-    height: 100px;
     &:hover {
-      color: blue;
-      border-top: 1px solid blue;
+      color: blue !important;
+      border-top: 1px solid blue !important;
     }
   }
-  
   select { 
     font-family: "Font Awesome\ 5 Free" !important; 
     font-weight: 900; 
   }
+  .order-6 {
+    order: 6 !important;
+    }
+  .order-7 {
+      order: 7 !important;
+    }  
 </style>
