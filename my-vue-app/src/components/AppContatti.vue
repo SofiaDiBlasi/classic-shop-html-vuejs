@@ -99,7 +99,7 @@
                 <div class="d-flex mb-3">
                   <i class="fa-sharp fa-solid fa-star text-primary" v-for="i in 5" :key="i"></i>
                 </div>
-                <p>{{ product.price }}</p>
+                <p><span class="text-decoration-line-through">{{ product.sales}}</span><span :class="product.sales != null ? 'text-decoration-underline' : ''">{{ product.price }}</span></p>
               </div>
              <div class="d-flex">
                 <img class="footerImg" :src="product.img" alt="">
