@@ -16,10 +16,15 @@
 </script>
 
 <template>
+   <!--contenitore generale-->
    <div class="container-fluid brandBox py-5">
+
+      <!--testo-->
       <div class="row text-center">
          <p class="">BRAND LOGOS</p>
       </div>
+
+      <!--brand-->
       <div class="row">
          <div class="col d-flex justify-content-center align-items-center">
             <img class="m-5" v-for="img in img" :key="img" :src="img" alt="">

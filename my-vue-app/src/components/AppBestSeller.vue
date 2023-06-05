@@ -48,7 +48,11 @@
 </script>
 
 <template>
+
+   <!--contenitore generale-->
    <div class="container bestSellerBox">
+
+      <!--titolo-->
       <div class="row h-30 justify-content-center align-items-center pt-5">
          <div class="col-3"><hr class="mb-5" /></div>
          <div class="col-auto text-center">
@@ -57,6 +61,8 @@
          </div>
          <div class="col-3"><hr class="mb-5"/></div>
     </div>
+
+    <!--base template importata-->
     <div class="row justify-content-center align-items-center h-70 pb-5">
       <Carousel v-bind="settings" :breakpoints="breakpoints">
          <Slide v-for="slide in bestSellerSlider" :key="slide">

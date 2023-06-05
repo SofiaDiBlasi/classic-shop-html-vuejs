@@ -24,7 +24,10 @@
 </script>
 
 <template>
+
+   <!--contenitore generale-->
    <div class="container-fluid align-items-center justify-content-center confettiBox confettiBg">
+      <!--testo e img-->
       <div class="row h-80 align-items-center justify-content-center">
          <div class="col-4 h-100 collection mx-4 d-flex flex-column justify-content-center align-items-start px-5" v-for="promo in promo" :key="promo" :style="'background-image: url(' + promo.img + '); background-size: cover; background-repeat: no-repeat;'">
             <h1 class="text-white">{{ promo.testo1 }}</h1>

@@ -48,7 +48,11 @@
 </script>
 
 <template>
+
+   <!--contenitore generale-->
    <div class="container-fluid bestSellerBox">
+      
+      <!--titolo-->
       <div class="row h-30 justify-content-center align-items-center pt-5">
          <div class="col-3"><hr class="mb-5" /></div>
          <div class="col-auto text-center">
@@ -56,18 +60,21 @@
             <p>Brand new products from top designers</p>
          </div>
          <div class="col-3"><hr class="mb-5"/></div>
-    </div>
+    </div>  
+
+    <!--slider di img-->
+    <!--base template importato-->
     <div class="row justify-content-center align-items-center h-70 pb-5">
-      <Carousel v-bind="settings" :breakpoints="breakpoints">
-         <Slide v-for="slide in bestSellerSlider" :key="slide">
-            <div class="carousel__item">
-               <img class="newArrImg" :src="slide" alt="">
-            </div>
-         </Slide>
-         <template #addons>
-            <Navigation />
-         </template>
-       </Carousel>
+         <Carousel v-bind="settings" :breakpoints="breakpoints">
+            <Slide v-for="slide in bestSellerSlider" :key="slide">
+               <div class="carousel__item">
+                  <img class="newArrImg" :src="slide" alt="">
+               </div>
+            </Slide>
+            <template #addons>
+               <Navigation />
+            </template>
+         </Carousel>
     </div>
     
    </div>

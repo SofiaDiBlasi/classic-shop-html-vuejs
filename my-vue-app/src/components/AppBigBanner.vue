@@ -48,13 +48,13 @@
       <div class="col-auto d-flex flex-column justify-content-center align-items-center h-100">
 
         <!--testo del banner-->
-        <h1 class="text-light">Brand New Arrivals</h1>
-        <p class="text-light">NEW COLLECTION FROM NEW YORK</p>
+        <h1 class="text-light bigBannerText">Brand New Arrivals</h1>
+        <p class="text-light smallBannerText ">NEW COLLECTION FROM NEW YORK</p>
 
         <!--pulsanti-->
         <div class="d-flex">
-          <button class="btn btn-lg bannerBtn text-light rounded-pill mx-2 px-4">VIEW ALL</button>
-          <button class="btn btn-lg bannerBtn text-light rounded-pill mx-2 px-4">LOOKBOOK</button>
+          <button class="btn btn-lg bannerBtn text-light rounded-pill mx-2 px-5">VIEW ALL</button>
+          <button class="btn btn-lg bannerBtn text-light rounded-pill mx-2 px-5">LOOKBOOK</button>
         </div>
       </div>
     </div>
@@ -64,6 +64,12 @@
 <style lang="scss">
   .bigBanner{
     height: 600px;
+  }
+  .bigBannerText{
+    font-size: 100px;
+  }
+  .smallBannerText{
+    font-size: 30px;
   }
   .bannerBtn {
     background-color:rgba(255, 255, 255, 0.1) !important;

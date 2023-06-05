@@ -4,15 +4,11 @@
 
     data() {
       return {
-        iconeSocial : [
+        socialIcon : [
               "fa-brands fa-facebook-f",
               "fa-brands fa-twitter",
               "fa-brands fa-instagram",
               "fa-brands fa-youtube"
-        ],
-        cartItem : [
-            "n-1 T-shirt Tg Sx",
-            "n-2 Cappello in lana"
         ],
         navMenù : [
           {
@@ -63,7 +59,7 @@
 
       <!--icone social-->
       <div class="col-6 text-center">
-        <i v-for="icone in iconeSocial" :key="icone" :class="icone" class="iconeSocial mx-3"></i>
+        <i v-for="icon in socialIcon" :key="icon" :class="icon" class="iconeSocial mx-3"></i>
       </div>
 
       <!--parte destra-->
@@ -111,9 +107,15 @@
         <button v-for="voce in navMenù" :key="voce" :class="'order-'+ voce.order" class="navBar rounded-0 btn dropdown-toggle h-100" type="button" data-toggle="dropdown" aria-expanded="false">
           {{ voce.name }}
         </button>
+        <!--bottone solo per News-->
         <button class="navBar h-100 rounded-0 btn order-4" href="">News</button>
-        <button type="button" class="btn btn-primary btn-lg rounded-pill font-weight-bold mx-5 order-6">
+        <!--bttone shop now + ricerca-->
+        <button type="button" class="avadaButton btn text-white btn-lg rounded-pill font-weight-bold mx-5 px-4 order-6">
           SHOP NOW!
+        </button>
+        <!--bottone in hover-->
+        <button type="button" class="avadaHover d-none btn text-white btn-lg rounded-pill font-weight-bold mx-5 px-4 order-6">
+          GET AVADA NOW!
         </button>
         <i class="fa-solid fa-magnifying-glass fs-6 ms-1 order-7"></i>
       </div>
@@ -122,8 +124,10 @@
 </template>
 
 <style lang="scss">
+  @import "../style.scss";
+
   .header-container {
-    font-size: 13px !important;
+    font-size: 15px !important;
     height: 140px;
   }
   .h-30 {
@@ -133,9 +137,20 @@
     height: 70%;
   }
   .btn {
-    font-size: 13px !important;
+    font-size: 15px !important;
   }
+  .avadaButton{
+    display: block;
+    background-color: $mainTheme !important;
 
+    &:hover {
+      display: none;
+    }
+  }
+  .avadaButton:hover ~ .avadaHover {
+    display:block !important;
+    background-color: $secondaryTheme !important;
+  }
   .iconeSocial{
     color: #494949;
   }

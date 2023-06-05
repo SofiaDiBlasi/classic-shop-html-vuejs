@@ -36,12 +36,12 @@
           }
         ],
         post : [
-        "> a aaaaaaaaaaaaaaaaa a aaaaaaaaa a ",
-        "> aaaa aaa aaaaaaaaa aaaa   aaaaaaaaa ",
-        "> aaaaaaa aaaaaaa aa aaa a aa aa aaaaa ",
-        "> aaaaaaaaaaa   aaaaaaaaaaaaaaaaaa ",
-        "> aaaaaaaaaaa aaaaaa aa aaaaaaaaaa ",
-        "> aaaaaaaaa aaaa  aaaaaa aaaaaaaaaa "
+        "> Aenean lobortis sapien enim viverra ",
+        "> Duis ac massa semper maximus ",
+        "> Nunc fermit nulla ea justo sem id ",
+        "> Aliquam posuere magna eget nibh ",
+        "> Cras ac nulla consecte retrum ",
+        "> Fusce mattis nunc at aliquam "
        ],
         tags : [
           "Black",
@@ -80,46 +80,55 @@
       <div class="row h-100 justify-content-center">
 
         <div class="col-2 h-100 d-flex flex-column justify-content-start">
+          
           <!--logo-->
-          <img class="mb-5" src="../assets/images/classic_shop_logo_footer.png" alt="">
+          <img class="avadaDarkLogo mb-5" src="../assets/images/classic_shop_logo_footer.png" alt="">
+         
           <!--contatti-->
           <p class="text-white" v-for="info in avadaInfo" :key="info" >{{ info }}</p>
+         
           <!--icone social-->
           <div class="mt-5">
             <i v-for="icone in iconeSocial" :key="icone" :class="icone" class="m-2 text-white"></i>
           </div>
+
         </div>
 
         <!--top prod-->
         <div class="col-2 h-100 d-flex flex-column justify-content-start align-items-start ms-5">
           <h5 class="text-white">TOP RATED PRODUCTS</h5>
           <div class="d-flex justify-content-between w-100 prodBorder" v-for="product in products" :key="product">
-             <div class="d-flex flex-column text-white">
+           
+            <!--info prodotto-->
+            <div class="d-flex flex-column text-white">
                 <p>{{ product.name }}</p>
                 <div class="d-flex mb-3">
-                  <i class="fa-sharp fa-solid fa-star text-primary" v-for="i in 5" :key="i"></i>
+                  <i class="fa-sharp fa-solid fa-star theme" v-for="i in 5" :key="i"></i>
                 </div>
                 <p><span class="text-decoration-line-through">{{ product.sales}}</span><span :class="product.sales != null ? 'text-decoration-underline' : ''">{{ product.price }}</span></p>
               </div>
+
+              <!--img prodotto-->
              <div class="d-flex">
                 <img class="footerImg" :src="product.img" alt="">
              </div>
+
           </div>
         </div>
 
         <!--posts-->
         <div class="col-2 h-100 d-flex flex-column justify-content-start align-items-start">
           <h5 class="text-white">RECENT POSTS</h5>
-          <div class="link text-white" v-for="link in post" :key="link">
+          <a class="link text-white" v-for="link in post" :key="link">
             {{ link }}
-          </div>
+          </a>
         </div>
 
         <!--tags-->
         <div class="col-2 h-100 d-flex flex-column justify-content-start align-items-start">
           <h5 class="text-white">TAGS</h5>
           <div class="d-flex flex-wrap">
-            <p v-for="tag in tags" :key="tag" class="text-white tag fw-bold">{{ tag }}</p>
+            <button v-for="tag in tags" :key="tag" class="text-white tag fw-bold">{{ tag }}</button>
           </div>
         </div>
       </div>
@@ -131,14 +140,21 @@
     background-color: #2b2e32;
     height: 500px;
   }
+  .avadaDarkLogo{
+    height: 50px;
+    width: 190px;
+  }
   .tag {
     border: 1px solid #35383c;
     padding: 5px 9px;
     margin: 2px;
+    background-color: #2b2e32;
   }
   .link {
     padding: 15px 0px;
+    text-decoration: none;
     border-bottom: 1px solid #35383c;
+    cursor: pointer;
   }
   .prodBorder{
     padding-top: 15px;

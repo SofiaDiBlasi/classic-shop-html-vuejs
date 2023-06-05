@@ -33,7 +33,11 @@
 </script>
 
 <template>
+
+   <!--contenitore generale-->
    <div class="container-fluid blogBox">
+
+      <!--titolo-->
       <div class="row h-30 justify-content-center align-items-center">
          <div class="col-3"><hr class="mb-5" /></div>
          <div class="col-auto text-center">
@@ -42,6 +46,8 @@
          </div>
          <div class="col-3"><hr class="mb-5"/></div>
       </div>
+
+      <!--img e testo-->
       <div class="row blogCard h-70 justify-content-center align-items-center">
          <div class="col d-flex flex-wrap flex-column justify-content-center align-items-start p-0" v-for="post in blogPost" :key="post">
             <img class="blogImg" :src="post.img" alt="">
