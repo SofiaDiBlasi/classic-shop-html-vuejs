@@ -104,9 +104,17 @@
 
       <!--select menù navbar-->
       <div class="offset-1 col-7 select text-center h-100 align-items-center d-flex">
-        <button v-for="voce in navMenù" :key="voce" :class="'order-'+ voce.order" class="navBar rounded-0 btn dropdown-toggle h-100" type="button" data-toggle="dropdown" aria-expanded="false">
-          {{ voce.name }}
-        </button>
+        <div class="dropdown">
+            <button v-for="voce in navMenù" :key="voce" :class="'order-'+ voce.order" class="navBar rounded-0 btn dropdown-toggle h-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{ voce.name }}
+            </button>
+            <ul class="dropdown-menu">
+              <li v-for="item in navItem" :key="item" class="dropdown-item">
+                {{item}}
+              </li> 
+            </ul>
+        </div>
+        
         <!--bottone solo per News-->
         <button class="navBar h-100 rounded-0 btn order-4" href="">News</button>
         <!--bttone shop now + ricerca-->
@@ -158,8 +166,8 @@
     color: #494949;
     border: none;
     &:hover {
-      color: blue !important;
-      border-top: 1px solid blue !important;
+      color: $mainTheme !important;
+      border-top: 1px solid $mainTheme !important;
     }
   }
   select { 
